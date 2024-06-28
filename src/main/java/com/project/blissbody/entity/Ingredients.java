@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Ingredients {
 
     @Id
-    private ObjectId foodId;
+    private ObjectId id;
 
     @Indexed(unique = true)
     @NonNull
@@ -39,12 +39,6 @@ public class Ingredients {
     private Double sugar;
 
     private Double sodium;
-
-    @NonNull
-    private Double servingSize;
-
-    @NonNull
-    private String servingUnit;
 
 }
 
