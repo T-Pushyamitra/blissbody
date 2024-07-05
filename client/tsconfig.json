@@ -28,7 +28,7 @@
   },
   "include": [
     "src/**/*" // *** The files TypeScript should type check ***
-, "pages"  ],
+, "pages", "declarations.d.ts"  ],
   "exclude": [
     "node_modules",
     "build"
