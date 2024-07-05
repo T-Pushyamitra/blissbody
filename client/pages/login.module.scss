@@ -23,7 +23,7 @@
     font-family: "Montserrat", sans-serif;
   
     .leftPanel {
-        background-color: #1a1a1a;
+        background: #333;
         color: white;
         flex: 1;
         display: flex;
@@ -35,7 +35,7 @@
         background: #333;
         padding: 40px;
         border-radius: 20px 0px 0px 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
         width: 100%;
         margin-left: 80px;
