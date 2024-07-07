@@ -8,6 +8,7 @@ import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,6 +22,7 @@ public class IngredientsController {
     IngredientsService ingredientsService;
 
     @GetMapping
+    @PreAuthorize("hasAuthority('ADMIN') || hasAuthority('USER')")
     public ResponseEntity<?> index(){
         try{
             List<Ingredients> foodItemList = ingredientsService.index();
@@ -32,6 +34,7 @@ public class IngredientsController {
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("hasAuthority('ADMIN') || hasAuthority('USER')")
     public ResponseEntity<?> getIngredient(@PathVariable("id") ObjectId id){
         try{
             Ingredients ingredient = ingredientsService.get(id);
@@ -47,16 +50,18 @@ public class IngredientsController {
     }
 
     @PostMapping
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<?> save(@RequestBody Ingredients ingredients){
         try {
             return new ResponseEntity<>(ingredientsService.save(ingredients), HttpStatus.CREATED);
         } catch (Exception e){
-            log.error("Error occurred while saving new ingredient: " + e.getMessage());
+            log.error("Error occurred while saving new ingredient: {}", e.getMessage());
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 
     @PutMapping("/{id}")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<?> update(@RequestBody Ingredients ingredient, @PathVariable("id")ObjectId id){
         try{
             if (id != null) {
@@ -65,7 +70,7 @@ public class IngredientsController {
             }
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         } catch (Exception e){
-            log.error("Error occurred while updating ingredient: " + e.getMessage());
+            log.error("Error occurred while updating ingredient: {}", e.getMessage());
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
