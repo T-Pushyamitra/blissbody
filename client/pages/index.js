@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import '../styles/globals.css';
 
 const App = dynamic(() => import("../components/App"), { ssr: false });
 

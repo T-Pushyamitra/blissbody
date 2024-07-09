@@ -1,83 +1,93 @@
-.loginPage{
-    width: 100vw;
-    height: 100vh;
+.loginPage {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .loginMain {
+    background-color: red;
+    width: 80vw;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    .loginMain{
-        background-color: red;
-        width: 80vw;
-        height: 80vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 20px;
-    }
+    border-radius: 20px;
+  }
 }
 
 .container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Montserrat", sans-serif;
+
+  .leftPanel {
+    background: #333;
+    color: white;
+    flex: 1;
     display: flex;
-    height: 100vh;
-    width: 100vw;
-    font-family: "Montserrat", sans-serif;
-  
-    .leftPanel {
-        background: #333;
-        color: white;
-        flex: 1;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .loginBoxLeft {
+      background: #333;
+      padding: 40px;
+      border-radius: 20px 0px 0px 20px;
+      box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 100%;
+      margin-left: 80px;
+      height: 80%;
+
+      .formContainerLogin {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-  
-      .loginBoxLeft {
-        background: #333;
-        padding: 40px;
-        border-radius: 20px 0px 0px 20px;
-        box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        width: 100%;
-        margin-left: 80px;
-        height: 80%;
-  
+        align-items: start;
+        flex-direction: column;
+        position: relative;
+        top: 30%;
+
         h1 {
           margin-bottom: 20px;
         }
-  
+
         p {
           margin-bottom: 20px;
+          font-size: smaller;
+          color: gray;
         }
-  
+
         form {
           .inputGroup {
             margin-bottom: 20px;
-  
+
             label {
               display: block;
               margin-bottom: 5px;
             }
-  
+
             input {
-                width: auto;
-                height: 10px;
-                padding: 10px;
-                border: 1px solid #444;
-                border-radius: 5px;
-                background: #222;
-                color: white;
+              width: 200px;
+              height: 10px;
+              padding: 10px;
+              border: 1px solid #444;
+              border-radius: 5px;
+              background: #222;
+              color: white;
             }
           }
-  
+
           .forgotPassword {
             display: block;
             margin: 10px 0;
             color: #bbb;
             text-decoration: none;
           }
-  
+
           .loginButton {
-            width: 50%;
+            width: 160px;
+            height: 35px;
             padding: 10px;
             background: #6f42c1;
             border: none;
@@ -88,10 +98,10 @@
             margin-top: 20px;
           }
         }
-  
+
         p {
           margin-top: 20px;
-  
+
           .signUpButton {
             background: none;
             border: none;
@@ -102,40 +112,41 @@
         }
       }
     }
-  
-    .rightPanel {
-        background-color: #6f42c1;
-        color: white;
-        flex: 1;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
+  }
 
-      .loginBoxRight {
-        background-color: #6f42c1;
-        padding: 40px;
-        border-radius: 0px 20px 20px 0px;
-        box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        width: 100%;
-        height: 80%;
-        margin-right: 80px;
-  
+  .rightPanel {
+    background-color: #6f42c1;
+    color: white;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .loginBoxRight {
+      background-color: #6f42c1;
+      padding: 40px;
+      border-radius: 0px 20px 20px 0px;
+      box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 100%;
+      height: 80%;
+      margin-right: 80px;
+
       h1 {
         font-size: 48px;
       }
-  
+
       h2 {
         font-size: 36px;
         margin: 10px 0;
       }
-  
+
       p {
         font-size: 18px;
       }
-  
+
       .illustration {
         max-width: 100%;
         height: auto;
@@ -143,5 +154,5 @@
         height: 70%;
       }
     }
-}
   }
+}
